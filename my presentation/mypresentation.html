@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Patty Cakes</title>
+  <title>Desktop vs Mobile Rubric</title>
 
   <!-- main stylesheet link -->
   <link rel="stylesheet" href="style.css" />
@@ -40,13 +40,13 @@
 
 <body>
   <header>
-    <h1>Patty Cakes</h1>
+    <h1>Desktop VS Mobile Rubric</h1>
   </header>
   <div class="mainDiv">
-    <h2>We Have Everything for that Sweet Tooth</h2>
+    <h2>What we are looking for:</h2>
 
     <p>
-      <div class="text"><strong>cakes cakes Cakes</div>
+      <div class="text"></div>
     </p>
 
     <p>
@@ -57,26 +57,40 @@
       <img src="donut.jpg" alt="Donut">
 
     </p>
-    <p>
-      <div class="text"> bdjaksgduiagrbjkaegfjkgaskfd</div>
-    </p>
 
-
-      <div class="text">hdjksagiuewagreabf;bz;bvfiudbgjk;z vfioz'fiohatenfhios'zhfgorhatbjrk;vihrg</div>
+      <div class="text">1.You are able to make this page responsive. Once this is done you will</div>
 
 
       <p>
-        <div class="text">bajgfubfjewabcgdagvjhaebnfsdchdjgjfevtirugewajhcbgsdugfaer;t4w</div>
+        <div class="text"><strong>2.</strong>In Photoshop or Illustrator you will create a mobile and desktop layout for </div>
       </p>
 
 
-        <div class="text"> fbajhgdashdbjasbdjawdjksa /></div>
+        <div class="text"> 3. Upload your picture to </div>
 
 
 
     </div>
 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        //get a random color between 0 and 255
+        function getRandomColor() {
+          return Math.floor(Math.random() * 255);
+        }
 
+        var randomColor = $(".randomColor");
+
+        $.each(randomColor, function(index, item) {
+          $(this).css("background-color", "RGB(" + getRandomColor() + "," + getRandomColor() + "," + getRandomColor() + ")");
+        })
+
+      })
+      </script>
 </body>
 
 </html>

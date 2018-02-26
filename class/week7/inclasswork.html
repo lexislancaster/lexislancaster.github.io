@@ -4,14 +4,25 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cats</title>
+    <title>Dogs</title>
 <style media="screen">
   .height1{
     height: 75px;
+    .boldRed{
+      font-color: red;
+    }
   }
 
   .height3{
     height: 50px;
+  }
+  h1{
+    font-size: 100px;
+    font-family: Dancing_Script;
+    text-align: center;
+    height: 300px;
+    text-align: center;
+    line-height: 300px;
   }
 
 </style>
@@ -26,11 +37,12 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+
   <body>
 <div class="container">
   <div class="row">
     <div class="col-md-12 height1 randomColor">
-
+           <h1>Dogs I Know</h1>
     </div>
     <div class="col-md-12 height3 randomColor">
 
@@ -68,25 +80,25 @@
     </script>
 
 <script>
-  var cats =
+  var dogs =
   [
   {
   "breed":"German Shepherd",
   "name":"Duke",
   "owner":"Aaron",
-  "imgUrl":"http://lexislancasterjs.github.io/class/week7/img/german.jpg"
+  "imgUrl":"http://lexislancaster.github.io/class/week7/img/german.jpg"
 },
 {
   "breed":"Poodle",
   "name":"T'Challa",
   "owner":"Patrick",
-  "imgUrl":"http://andersonguelphjs.github.io/class/week7/img/poodle.jpg"
+  "imgUrl":"http://lexislancaster.github.io/class/week7/img/poodle.jpg"
 },
 {
   "breed":"Australian Shepherd",
   "name":"Roxy",
   "owner":"Sunny",
-  "imgUrl":"http://andersonguelphjs.github.io/class/week7/img/australian.jpg"
+  "imgUrl":"http://lexislancaster.github.io/class/week7/img/australian.jpg"
   },
 {
   "breed":"Pug",
@@ -98,8 +110,8 @@
   "breed":"Dachshund",
   "name":"Zeus",
   "owner":"Hercueles",
-  "imgUrl":"http://lexislancaster.github.io/class/week7/img/dog.jpg"
-},
+  "imgUrl":"http://lexislancaster.github.io/class/week7/img/smalldog.jpg"
+}
 
 ];
 $(document).ready(function(){
@@ -113,13 +125,13 @@ $(document).ready(function(){
     "</tr>";
 
 //here is the loop of the arrat 'cats'
-for(var i=0;i<cats.length;i++){
+for(var i=0;i<dogs.length;i++){
   console.log("i "+i);
   html+=  "<tr>"+
-      "<td><img src='"+cats[i].imgUrl+"'</td>"+
-      "<td>"+cats[i].name+"</td>"+
-      "<td>"+cats[i].breed+"</td>"+
-      "<td>"+cats[i].owner+"</td>"+
+      "<td><img src='"+dogs[i].imgUrl+"'</td>"+
+      "<td>"+dogs[i].name+"</td>"+
+      "<td>"+dogs[i].breed+"</td>"+
+      "<td>"+dogs[i].owner+"</td>"+
      "</tr>";
 }
 html += "</table>";

@@ -1,0 +1,28 @@
+
+[
+{
+"breed":"German Shepherd",
+"name":"Duke",
+"owner":"Aaron"
+},
+{
+"breed":"Poodle",
+"name":"T'Challa",
+"owner":"Patrick"
+},
+{
+"breed":"Australian Shepherd",
+"name":"Roxy",
+"owner":"Sunny"
+},
+{
+"breed":"Pug",
+"name":"T'Challa",
+"owner":"Alex"
+},
+{
+"breed":"Dachshund",
+"name":"Zeus",
+"owner":"Hercueles"
+}
+]

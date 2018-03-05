@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>json</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <style media="screen">
+    body {
+      background-color: #000;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row"></div>
+    <div class="output"></div>
+</div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      //get a random color between 0 and 255
+      function getRandomColor() {
+        return Math.floor(Math.random() * 255);
+      }
+      var randomColor = $(".randomColor");
+      $.each(randomColor, function(index, item) {
+        $(this).css("background-color", "RGB(" + getRandomColor() + "," + getRandomColor() + "," + getRandomColor() + ")");
+      })
+    })
+  </script>
+  <script>
+
+    var url = "https://lexislancaster.github.io/class/class8/assets/myjson.json";
+
+    $.getJSON(url).done(function(data) {
+      console.log("success! ");
+      console.dir(data);
+
+      var slideHtml = "";
+        for (var i = 0; i < data.length; i++) {
+          dataHtml+=""<div>""data[i].title+"<div>";
+        }
+          console.log("i " + i);
+          // slideHtml += '<div class="' + data[i].class + '">' +
+          //   '<img src="' + data[i].source + '"alt="">' +
+          //   '<div class="carousel-caption">' +
+          //   data[i].caption +
+          //   '</div>' +
+          //   '</div>';
+          slideHtml += '<div>'+breed+'</div>';
+          slideHtml += '<div>'+name+'</div>';
+          slideHtml += '<div>'+owner+'</div>';
+        }
+      console.log("i " + i);
+
+
+
+
+      $(document).ready(function() {
+        $(".carousel-inner").html(slideHtml);
+        $(".carousel").carousel();
+      })
+
+    }).fail(function(data) {
+      console.log("failed! " + JSON.stringify(data));
+    });
+  </script>
+
+</body>
+
+</html>

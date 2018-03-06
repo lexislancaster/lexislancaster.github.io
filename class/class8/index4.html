@@ -11,9 +11,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <style media="screen">
-    body {
-      background-color: #000;
-    }
+
   </style>
 </head>
 
@@ -47,20 +45,18 @@
       console.log("success! ");
       console.dir(data);
 
-      var slideHtml = "";
+      var dataHtml = "";
         for (var i = 0; i < data.length; i++) {
-          dataHtml+=""<div>""data[i].title+"<div>";
+          dataHtml+="<div>"+data[i].breed+"<div>";
         }
         $(document).ready(function(){
         $(".output").html(dataHtml);
-        }
-        
-        {
-          slideHtml += '<div>'+breed+'</div>';
-          slideHtml += '<div>'+name+'</div>';
-          slideHtml += '<div>'+owner+'</div>';
-        }
-
+        //
+        // {
+        //   slideHtml += '<div>'+breed+'</div>';
+        //   slideHtml += '<div>'+name+'</div>';
+        //   slideHtml += '<div>'+owner+'</div>';
+        // }
       })
 
     }).fail(function(data) {

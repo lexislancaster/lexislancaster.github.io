@@ -51,25 +51,16 @@
         for (var i = 0; i < data.length; i++) {
           dataHtml+=""<div>""data[i].title+"<div>";
         }
-          console.log("i " + i);
-          // slideHtml += '<div class="' + data[i].class + '">' +
-          //   '<img src="' + data[i].source + '"alt="">' +
-          //   '<div class="carousel-caption">' +
-          //   data[i].caption +
-          //   '</div>' +
-          //   '</div>';
+        $(document).ready(function(){
+        $(".output").html(dataHtml);
+        }
+        
+        {
           slideHtml += '<div>'+breed+'</div>';
           slideHtml += '<div>'+name+'</div>';
           slideHtml += '<div>'+owner+'</div>';
         }
-      console.log("i " + i);
 
-
-
-
-      $(document).ready(function() {
-        $(".carousel-inner").html(slideHtml);
-        $(".carousel").carousel();
       })
 
     }).fail(function(data) {

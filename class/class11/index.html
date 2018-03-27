@@ -33,17 +33,30 @@
             CHINDOGU.COM
         </div>
       </div>
+    </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="selectContainer">
+              <div>
+                <select class="selectLabel">
+                  Choose another product type :
+                </select>
+                <div>
+        </div>
+      </div>
       <div class="row">
         <div class="col-md-2 adsLeft">
 
         </div>
+      </div>
         <div class="col-md-8">
 
         </div>
         <div class="col-md-2 adsRight">
 
-        </div>
       </div>
+
       <div class="row">
         <div class="col-md-12 height1 footer">
           <hr>
@@ -51,7 +64,7 @@
 
         </div>
       </div>
-    </div>
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -78,13 +91,56 @@
         for(var i=0;i<3;i++){
           $(".adsLeft").append("<div class='ad'><img src='"+ads[Math.floor(Math.random()*10)]+"'/></div>");
           $(".adsRight").append("<div class='ad'><img src='"+ads[Math.floor(Math.random()*10)]+"'/></div>");
-
-
         }
 
-    }
-$(document).ready(function(){
+             var options = {
+               "Anderson 1": "https://andersonguelphjs.github.io/class/week11/myJSON.json",
+               "Anderson 2": "https://andersonguelphjs.github.io/class/week11/myJSON2.json"
+             };
 
+       Each item
+
+             <div data-id="1" class="itemContainer">
+             <div class="proAndTitle">Kira risu</div>
+             <div class="proAndPrice">¥800</div>
+             <div class="imageContainer"><img src="https://andersonguelphjs.github.io/class/week11/img/kirarisu.png"></div>
+             <div class="buttonContainer">
+               <button type="button" class="buyButton btn-default btn">Buy</button>
+             </div>
+             </div>
+
+           function writeJSONToDOM(d){
+             var html="";
+
+             for(var jsonObj in d){
+               html+="<div data-id='"+jsonObj+"' class='itemContainer'>";
+               for (var key in d[jsonObj]){//loop through the keys of each object
+                 if (key==="itemId"){
+                   continue;//continue mean skip this iteration of the loop
+                 }
+                 if (d[jsonObj][key].indexOf("github")!==-1){
+                   //if 'github' text appears in the value (-1 means not found)
+                   html+="<div class='imageContainer'><img src='https://"+d[jsonObj][key]+"'></div>";
+                 }
+                 else{//otherwise use the key as teh class and teh value as teh text
+                   html+="<div class='"+key+"'>"+d[jsonObj][key]+"</div>";
+                 }
+               }//inner loop
+
+              html+="<div class='buttonContainer'>";
+              html+="<button type='button' class='buyButton btn-default btn'>Buy</button>";
+              html+="</div>";
+              html+="</div>";
+
+            }//first for loop
+
+               //loop this here
+             $(".output").html(html);
+           }
+
+
+$(document).ready(function(){
+  getOptions();
   getAds();
 
   $("body").fadeIn();
